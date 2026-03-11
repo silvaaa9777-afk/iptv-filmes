@@ -4,26 +4,29 @@ on:
   push:
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: baixar repositório
-        uses: actions/checkout@v3
+      - name: Baixar repositório
+        uses: actions/checkout@v4
 
-      - name: instalar python
-        uses: actions/setup-python@v4
+      - name: Instalar Python
+        uses: actions/setup-python@v5
         with:
           python-version: '3.x'
 
-      - name: gerar playlist
+      - name: Gerar playlist
         run: python gerar.py
 
-      - name: salvar playlist
+      - name: Salvar playlist
         run: |
-          git config --global user.name "github-actions"
-          git config --global user.email "actions@github.com"
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
           git add playlist.m3u
-          git commit -m "playlist atualizada"
+          git commit -m "playlist atualizada" || echo "nada para salvar"
           git push
