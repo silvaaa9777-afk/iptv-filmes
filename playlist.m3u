@@ -1,10 +1,7 @@
 #EXTM3U
-
-#EXTINF:-1 tvg-name="filme1" group-title="Filmes",filme1
+#EXTINF:-1,filme1
 https://filmes.xo.je/filmes/filme1.mp4
-
-#EXTINF:-1 tvg-name="filme2" group-title="Filmes",filme2
+#EXTINF:-1,filme2
 https://filmes.xo.je/filmes/filme2.mp4
-
-#EXTINF:-1 tvg-name="filme3" group-title="Filmes",filme3
+#EXTINF:-1,filme3
 https://filmes.xo.je/filmes/filme3.mp4
